@@ -4,6 +4,7 @@ import click
 from model.model import GPT,GPTConfig
 import torch
 import tiktoken
+device = "cuda" if torch.cuda.is_available() else "cpu"
 cfg = GPTConfig(
     vocab_size=50257,    
     block_size=128,     
