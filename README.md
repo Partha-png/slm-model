@@ -77,3 +77,33 @@ slm-model/
 │── saved_models/
 │   ├── best_model_params.pt     # Best validation checkpoint
 │   ├── final_model.pt           # Final model after training
+```
+## Tech Stack
+
+Language: Python 3.12
+
+Frameworks: PyTorch, Hugging Face Datasets, Streamlit
+
+Libraries: NumPy, Tiktoken, tqdm
+
+Hardware: Trained on Google Colab (NVIDIA GPU)
+
+## Future Work
+
+Scale to deeper/wider models for lower perplexity.
+
+Train on larger datasets (e.g., WikiText, OpenWebText).
+
+Add advanced sampling techniques (nucleus, temperature annealing).
+
+Extend evaluation with BLEU/ROUGE for controlled text tasks.
+
+Deploy Streamlit app on Hugging Face Spaces for public demo.
+
+## Citation & Inspiration
+
+Andrej Karpathy’s nanoGPT
+
+Hugging Face Datasets
+
+Vaswani et al., Attention is All You Need (2017)
