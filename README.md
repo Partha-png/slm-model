@@ -59,24 +59,32 @@ Achieving 10.6 PPL indicates the model effectively captures linguistic structure
 
 ```text
 slm-model/
-│── data/
-│   ├── datapreprocessing.py     # Dataset tokenization + .bin serialization
 │
-│── model/
-│   ├── model.py                 # Transformer (GPT) implementation
-│   ├── config.py                # Model hyperparameters (GPTConfig)
+├── data/
+│   └── data_preprocessing.py     # Dataset tokenization + .bin serialization
 │
-│── training/
-│   ├── train.py                 # Training loop
-│   ├── utils.py                 # Loss estimation, helpers
+├── inference/
+│   ├── __init__.py               # Makes inference a package
+│   ├── app.py                    # Streamlit interface
+│   └── generate.py               # CLI text generation
 │
-│── inference/
-│   ├── app.py                   # Streamlit interface
-│   ├── generate.py              # CLI text generation
+├── model/
+│   ├── __init__.py               # Makes model a package
+│   ├── config.py                 # Model hyperparameters (GPTConfig)
+│   └── model.py                  # Transformer (GPT) implementation
 │
-│── saved_models/
-│   ├── best_model_params.pt     # Best validation checkpoint
-│   ├── final_model.pt           # Final model after training
+├── saved_models/
+│   └── best_model_params.pt      # Best validation checkpoint
+│
+├── scripts/
+│   └── slm_training.ipynb        # Jupyter notebook for training
+│
+├── venv/                         # Virtual environment
+│
+├── .gitignore                    # Git ignore rules
+├── requirements.txt              # Dependencies
+├── train.bin                     # Serialized training dataset
+└── validation.bin                # Serialized validation dataset
 ```
 ## Tech Stack
 
