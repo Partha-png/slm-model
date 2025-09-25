@@ -16,10 +16,8 @@ cfg = GPTConfig(
     bias=True
 )
 model = GPT(cfg).to(device)
-model.load_state_dict(torch.load(
-    r'C:\Users\PARTHA SARATHI\Python\slm-model\saved_models\best_model_params.pt',
-    map_location=device
-))
+model_path = os.path.join(os.path.dirname(__file__), '..', 'saved_models', 'best_model_params.pt')
+model.load_state_dict(torch.load(model_path, map_location=device))
 model.eval()
 st.title("MiniMind 🧠")
 st.write("Enter a prompt and generate text with your trained GPT model.")

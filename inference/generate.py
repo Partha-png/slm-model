@@ -20,10 +20,10 @@ model=GPT(cfg).to("cuda" if torch.cuda.is_available() else "cpu")
 @click.option("--temp",help="temperature",default=0.8)
 @click.option("--tk",help="top_k values",default=200)
 def generate(prompt,mt,temp,tk):
-    model.load_state_dict(torch.load(
-    r'C:\Users\PARTHA SARATHI\Python\slm-model\saved_models\best_model_params.pt',
-    map_location="cuda" if torch.cuda.is_available() else "cpu"
-))
+    # WORKS - relative path
+    model_path = os.path.join(os.path.dirname(__file__), '..', 'saved_models', 'best_model_params.pt')
+    model.load_state_dict(torch.load(model_path, map_location=device))
+
     model.eval()
     tokenizer=tiktoken.get_encoding("gpt2")
     input_ids=torch.tensor([tokenizer.encode(prompt)],dtype=torch.long).to("cuda"if torch.cuda.is_available() else "cpu") 
