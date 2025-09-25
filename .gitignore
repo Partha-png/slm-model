@@ -10,13 +10,6 @@ venv/
 # Data (ignore raw datasets, keep scripts)
 data/
 *.bin
-
-# Saved models / checkpoints
-saved_models/
-*.pt
-*.pth
-*.ckpt
-
 # Logs
 *.log
 
